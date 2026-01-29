@@ -14,7 +14,7 @@ import {
 } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
 
-
+const BASE_URL = "https://chatapp-3-zto7.onrender.com"; 
 function App() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ function App() {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:3000/orders");
+      const res = await axios.get(`${BASE_URL}/orders`);
       const ordersData = res.data.data;
       setOrders(ordersData);
       

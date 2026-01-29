@@ -14,7 +14,18 @@ const app = express();
 connectDB();
 
 
-app.use(cors());  
+const allowedOrigins = [
+  "https://chatapp-frontend-7waq.onrender.com"
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(bodyParser.json());
 
 app.use(
