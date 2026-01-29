@@ -678,7 +678,8 @@ const orderData = new Order({
     name: p.name,
     price: p.price,
     size: state.selectedSize || "Store Selection",
-    code: `SAR-${p.type.slice(0,3)}-${String(p.id).padStart(3, '0')}`
+    code: `SAR-${p.type.slice(0,3)}-${String(p.id).padStart(3, '0')}`,
+     imageUrl: p.imageUrl 
   })),
 
   pricing: {
