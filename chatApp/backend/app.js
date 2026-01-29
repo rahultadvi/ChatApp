@@ -11,11 +11,12 @@ dotenv.config();
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
 connectDB();
 
 
 const allowedOrigins = [
-  "https://chatapp-frontend-7waq.onrender.com"
+  "https://chatapp-5-jubz.onrender.com"
 ];
 
 app.use(

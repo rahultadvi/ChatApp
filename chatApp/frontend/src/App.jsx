@@ -14,7 +14,7 @@ import {
 } from "react-icons/fi";
 import { BsWhatsapp } from "react-icons/bs";
 
-const BASE_URL = "https://chatapp-3-zto7.onrender.com"; 
+const BASE_URL = "https://chatapp-5-jubz.onrender.com"; 
 function App() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
