@@ -1,0 +1,34 @@
+import express from "express";
+import bodyParser from "body-parser";
+import axios from "axios";
+import dotenv from "dotenv";
+import path from "path";
+import webhookRoutes from "./router/webhook.route.js"
+import connectDB from "./config/db.js";
+import cors from "cors";
+dotenv.config();
+
+const PORT = process.env.PORT || 3001;
+const app = express();
+
+connectDB();
+
+
+app.use(cors());  
+app.use(bodyParser.json());
+
+app.use(
+"/images",
+express.static(path.join(process.cwd(), "public/images"))
+);
+app.use(
+"/pdfs",
+express.static(path.join(process.cwd(), "public/pdfs"))
+);
+app.use("/temp", express.static(path.join(process.cwd(), "public/temp")));
+
+app.use("/",webhookRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
